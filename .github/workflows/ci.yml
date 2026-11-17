@@ -36,5 +36,7 @@ jobs:
           flake8 src app tests --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
 
       - name: Run Pytest Suite
+        env:
+          PYTHONPATH: .
         run: |
-          pytest tests/ -v
+          python -m pytest tests/ -v

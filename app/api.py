@@ -30,12 +30,12 @@ detector = ToxicCommentDetector(lazy_load=True)
 
 
 class CommentRequest(BaseModel):
-    text: str = Field(..., example="আপনার ভিডিওটি খুব সুন্দর হয়েছে!")
+    text: str = Field(..., examples=["আপনার ভিডিওটি খুব সুন্দর হয়েছে!"])
     threshold: Optional[float] = Field(0.5, ge=0.0, le=1.0)
 
 
 class BatchCommentRequest(BaseModel):
-    texts: List[str] = Field(..., example=["ভালো কাজ!", "এই ফালতু লোকটাকে ব্যান করা হোক"])
+    texts: List[str] = Field(..., examples=[["ভালো কাজ!", "এই ফালতু লোকটাকে ব্যান করা হোক"]])
     threshold: Optional[float] = Field(0.5, ge=0.0, le=1.0)
 
 
