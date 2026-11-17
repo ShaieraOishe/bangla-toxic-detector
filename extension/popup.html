@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangla Toxic Comment Detector</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-area">
+        <span class="icon">🛡️</span>
+        <h2>Bangla SafeNet</h2>
+      </div>
+      <p class="tagline">বাংলা সাইবার বুলিং ও হ্যারাসমেন্ট ডিটেক্টর</p>
+    </header>
+
+    <main>
+      <div class="input-group">
+        <label for="commentInput">মন্তব্যটি পরীক্ষা করুন (Test Comment):</label>
+        <textarea id="commentInput" placeholder="এখানে বাংলা মন্তব্য লিখুন বা পেস্ট করুন..." rows="3"></textarea>
+      </div>
+
+      <div class="controls">
+        <div class="slider-wrapper">
+          <label for="thresholdRange">সংবেদনশীলতা: <span id="thresholdVal">50%</span></label>
+          <input type="range" id="thresholdRange" min="10" max="90" value="50">
+        </div>
+        <button id="analyzeBtn" class="primary-btn">বিশ্লেষণ করুন (Analyze)</button>
+      </div>
+
+      <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+        <span>AI বিশ্লেষণ করছে...</span>
+      </div>
+
+      <div id="resultCard" class="result-card hidden">
+        <div class="result-header">
+          <span id="badge" class="badge">নিরাপদ</span>
+          <span id="scoreText" class="score-text">টক্সিক স্কোর: 0%</span>
+        </div>
+        <div class="meter-bar">
+          <div id="meterFill" class="meter-fill" style="width: 0%;"></div>
+        </div>
+        <div id="flaggedSection" class="flagged-section hidden">
+          <strong>আপত্তিকর শব্দ:</strong>
+          <span id="flaggedWords" class="flagged-words"></span>
+        </div>
+      </div>
+
+      <div class="settings-toggle">
+        <details>
+          <summary>⚙️ API সেটিংস (Backend URL)</summary>
+          <div class="settings-content">
+            <input type="text" id="apiUrl" value="http://localhost:8000" placeholder="API Endpoint">
+            <button id="saveApiBtn" class="secondary-btn">সংরক্ষণ করুন</button>
+          </div>
+        </details>
+      </div>
+    </main>
+
+    <footer>
+      <span>Powered by BanglaBERT & AI for Women in Tech</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

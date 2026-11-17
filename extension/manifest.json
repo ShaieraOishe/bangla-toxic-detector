@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Bangla SafeNet - Toxic Comment Detector",
+  "version": "1.0.0",
+  "description": "AI-powered detection of toxic, abusive, and harassing comments in Bengali.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bangla Toxic Comment Detector"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "http://127.0.0.1:8000/*",
+    "https://*.hf.space/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.facebook.com/*", "*://*.youtube.com/*", "*://*.twitter.com/*", "*://*.x.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
