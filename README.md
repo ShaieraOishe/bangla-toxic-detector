@@ -139,5 +139,5 @@ Fine-tuned on **50,281 real Bengali social media comments** (40,224 train / 5,02
 ## 👩‍💻 Author
 
 **Shaiera Sultana Oishe**  
-*AI/ML Engineer & SQA Specialist*  
+*AI/ML & SQA Engineer *  
 [GitHub Profile](https://github.com/) · [LinkedIn](https://linkedin.com/)
